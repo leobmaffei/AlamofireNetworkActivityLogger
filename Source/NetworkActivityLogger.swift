@@ -118,7 +118,7 @@ public class NetworkActivityLogger {
             return
         }
         
-        startDates[task] = Date()
+        startDates = [task: Date()]
         
         switch level {
         case .debug:
@@ -161,7 +161,7 @@ public class NetworkActivityLogger {
         
         if let startDate = startDates[task] {
             elapsedTime = Date().timeIntervalSince(startDate)
-            startDates[task] = Date()
+            startDates = [task: Date()]
         }
         
         if let error = task.error {
