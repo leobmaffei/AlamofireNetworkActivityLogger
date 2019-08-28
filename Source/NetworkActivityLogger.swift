@@ -161,7 +161,7 @@ public class NetworkActivityLogger {
         
         if let startDate = startDates[task] {
             elapsedTime = Date().timeIntervalSince(startDate)
-            startDates[task] = nil
+            startDates[task] = Date()
         }
         
         if let error = task.error {
